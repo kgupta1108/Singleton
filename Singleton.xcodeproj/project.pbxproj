@@ -13,6 +13,7 @@
 		FA5BFCA62666A9F300D76365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFCA42666A9F300D76365 /* Main.storyboard */; };
 		FA5BFCA82666A9F400D76365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFCA72666A9F400D76365 /* Assets.xcassets */; };
 		FA5BFCAB2666A9F400D76365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFCA92666A9F400D76365 /* LaunchScreen.storyboard */; };
+		FA5BFCB42666AD6500D76365 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BFCB32666AD6500D76365 /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FA5BFCA72666A9F400D76365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5BFCAA2666A9F400D76365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA5BFCAC2666A9F400D76365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA5BFCB32666AD6500D76365 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FA5BFCA72666A9F400D76365 /* Assets.xcassets */,
 				FA5BFCA92666A9F400D76365 /* LaunchScreen.storyboard */,
 				FA5BFCAC2666A9F400D76365 /* Info.plist */,
+				FA5BFCB32666AD6500D76365 /* Singleton.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5BFCA32666A9F200D76365 /* ViewController.swift in Sources */,
+				FA5BFCB42666AD6500D76365 /* Singleton.swift in Sources */,
 				FA5BFC9F2666A9F200D76365 /* AppDelegate.swift in Sources */,
 				FA5BFCA12666A9F200D76365 /* SceneDelegate.swift in Sources */,
 			);
