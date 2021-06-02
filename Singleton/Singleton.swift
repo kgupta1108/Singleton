@@ -40,14 +40,49 @@ class LoginViewController: UIViewController {
 
 //Feed Module
 struct FeedItem {}
+protocol FeedLoader {
+    func loadFeed(completion: @escaping (([FeedItem]) -> Void))
+}
 class FeedViewController: UIViewController {
-    var loadFeed: ((([FeedItem]) -> Void) -> Void)?
+    var loader: FeedLoader!
+    
+    convenience init(loader:  FeedLoader) {
+        self.init()
+        self.loader = loader
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadFeed? { loadedItems in
+        loader.loadFeed { items in
             //Update UI
         }
+    }
+}
+
+class RemoteFeedLoader: FeedLoader {
+    func loadFeed(completion: @escaping (([FeedItem]) -> Void)) {
+        //Talk to an API Layer and call completion once done
+    }
+}
+
+class LocalFeedLoader: FeedLoader {
+    func loadFeed(completion: @escaping (([FeedItem]) -> Void)) {
+        // Does some offline capability to give better UX and then calls completion
+    }
+}
+
+class RemoteFeedLoaderWithLocalFallback: FeedLoader {
+    let remoteFeedLoader: FeedLoader
+    let localFeedLoader: FeedLoader
+    
+    init(remote: FeedLoader, local: FeedLoader) {
+        self.remoteFeedLoader = remote
+        self.localFeedLoader = local
+    }
+    func loadFeed(completion: @escaping (([FeedItem]) -> Void)) {
+        let isNetworkAvailable = true
+        isNetworkAvailable ? remoteFeedLoader.loadFeed(completion: completion) : localFeedLoader.loadFeed(completion: completion) 
     }
 }
 
